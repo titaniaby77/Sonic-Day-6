@@ -79,6 +79,65 @@ button{font:inherit;cursor:pointer;min-height:44px;touch-action:manipulation}
 .bonusTotal{margin-top:12px;font-weight:1000;color:#ffd96d;letter-spacing:.1em}
 
 
+
+
+/* Chaos Sync Hold */
+.syncHoldBox{
+  max-width:640px;margin:18px auto 0;padding:20px;
+  border:1px solid rgba(255,255,255,.12);
+  background:radial-gradient(circle at 50% 100%,rgba(78,201,255,.12),transparent 55%),#140b1b
+}
+.syncHands{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px
+}
+.syncHand{
+  min-height:120px;border-radius:18px;border:2px solid rgba(255,255,255,.14);
+  background:#24132c;color:#fff;font-weight:1000;letter-spacing:.08em
+}
+.syncHand.active{
+  background:linear-gradient(180deg,#7a2a62,#3e1d5c);
+  border-color:#ffd3ea;
+  box-shadow:0 0 28px rgba(255,79,163,.35)
+}
+.syncBar{
+  height:14px;margin-top:14px;background:#09060d;border:1px solid rgba(255,255,255,.1);overflow:hidden
+}
+.syncBarFill{
+  height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold),var(--blue));
+  box-shadow:0 0 15px rgba(78,201,255,.35)
+}
+@media(max-width:520px){
+  .syncHands{grid-template-columns:1fr 1fr}
+  .syncHand{min-height:100px;font-size:.85rem}
+}
+
+/* Secret Missions */
+.secretMissionBox{
+  max-width:620px;margin:18px auto 0;padding:18px;
+  border:1px solid rgba(255,255,255,.12);background:#160c1d
+}
+.secretStep{
+  font-size:.78rem;letter-spacing:.08em;font-weight:1000;color:#ffd8ea;margin-bottom:12px
+}
+.secretCard{
+  position:relative;min-height:180px;display:flex;align-items:center;justify-content:center;
+  padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,.12);
+  background:radial-gradient(circle at 50% 30%,rgba(255,79,163,.15),transparent 55%),#0e0812;
+  overflow:hidden
+}
+.secretCover{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(135deg,#30142f,#17101f);
+  color:#ffb8d9;font-size:1.25rem;font-weight:1000;letter-spacing:.12em
+}
+.secretCard.revealed .secretCover{display:none}
+.secretText{
+  font-size:clamp(1.1rem,4.5vw,1.55rem);line-height:1.45;font-weight:1000;color:#fff3fa
+}
+@media(max-width:520px){
+  .secretCard{min-height:160px}
+}
+
 /* rock paper scissors */
 .rpsScore{display:flex;justify-content:space-between;gap:10px;max-width:610px;margin:18px auto 0;padding:11px 13px;border:1px solid rgba(255,255,255,.12);background:#160b1d;font-size:.68rem;letter-spacing:.1em;font-weight:1000;color:#f4dbe8}
 .rpsResult{max-width:610px;margin:12px auto 0;padding:16px;border-left:5px solid var(--gold);background:rgba(0,0,0,.22);font-weight:1000;color:#ffe184;letter-spacing:.08em}
@@ -86,6 +145,106 @@ button{font:inherit;cursor:pointer;min-height:44px;touch-action:manipulation}
 .rpsBtn{min-height:112px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:linear-gradient(180deg,#35173a,#1c1024);color:#fff;font-size:2.1rem;font-weight:1000;box-shadow:0 8px 22px rgba(0,0,0,.2)}
 .rpsBtn small{display:block;margin-top:7px;font-size:.62rem;letter-spacing:.12em;color:#ff9dcc}
 .rpsBtn:active{transform:scale(.96);background:linear-gradient(180deg,#6a2354,#2a1331)}
+
+/* Dare Roulette */
+.dareWheel{
+  max-width:620px;margin:18px auto 0;padding:18px;
+  border:1px solid rgba(255,255,255,.12);background:#1a0d21
+}
+.dareDisplay{
+  min-height:150px;display:flex;align-items:center;justify-content:center;
+  padding:20px;border-radius:18px;
+  background:radial-gradient(circle at 50% 30%,rgba(255,79,163,.18),transparent 55%),#120a18;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:clamp(1.2rem,5vw,1.8rem);font-weight:1000;line-height:1.35;color:#fff0f8;
+  text-align:center
+}
+.dareMeta{margin-top:10px;font-size:.7rem;letter-spacing:.1em;font-weight:1000;color:#ffd6ea}
+.dareSpin{
+  animation:darePulse .42s ease-in-out infinite alternate
+}
+@keyframes darePulse{to{transform:scale(1.015);filter:brightness(1.15)}}
+
+/* Chaos Cards */
+.cardPick{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:650px;margin:18px auto 0
+}
+.chaosCardBtn{
+  min-height:150px;border:1px solid rgba(255,255,255,.14);border-radius:16px;
+  background:linear-gradient(180deg,#35163a,#1b1023);color:#fff;font-weight:1000;
+  padding:14px;font-size:1rem
+}
+.chaosCardBtn span{display:block;font-size:2rem;margin-bottom:8px}
+.chaosCardBtn.revealed{background:linear-gradient(180deg,#662755,#2b1430);border-color:#ff9dcc}
+.chaosCardText{
+  max-width:650px;margin:12px auto 0;padding:16px;border-left:5px solid var(--gold);
+  background:rgba(0,0,0,.22);color:#ffe5f2;line-height:1.5;font-weight:1000
+}
+
+/* Upgraded Yalincak runner */
+.runArena{
+  position:relative;width:min(100%,650px);height:360px;margin:18px auto 0;overflow:hidden;
+  border:2px solid rgba(255,126,191,.32);border-radius:22px;
+  background:
+    linear-gradient(90deg,transparent 32.6%,rgba(255,255,255,.08) 33%,rgba(255,255,255,.08) 33.6%,transparent 34%,transparent 66%,rgba(255,255,255,.08) 66.4%,rgba(255,255,255,.08) 67%,transparent 67.4%),
+    linear-gradient(180deg,#2b1230,#121020)
+}
+.runArena:before{
+  content:"";position:absolute;inset:0;opacity:.18;
+  background:repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.07) 35px 36px);
+  animation:roadMove .9s linear infinite
+}
+@keyframes roadMove{to{background-position:0 72px}}
+.runner{
+  position:absolute;bottom:16px;left:50%;width:58px;height:58px;transform:translateX(-50%);
+  border-radius:50%;z-index:5;
+  background:radial-gradient(circle at 58% 54%,#ffe1bd 0 17%,#49b8ff 18% 43%,#0767d9 44% 64%,#fff 65% 69%,#e9445b 70% 79%,transparent 80%);
+  box-shadow:0 0 25px rgba(78,201,255,.5);transition:left .12s ease
+}
+.runner:before{
+  content:"";position:absolute;left:-17px;top:2px;width:42px;height:18px;
+  background:#0c73df;clip-path:polygon(0 50%,100% 0,60% 100%)
+}
+.runObject{
+  position:absolute;top:-56px;width:42px;height:42px;z-index:3;transform:translateX(-50%)
+}
+.runObject.ringObj{
+  border:7px solid var(--gold);border-radius:50%;box-shadow:0 0 14px rgba(255,213,93,.5)
+}
+.runObject.hazardObj{
+  border-radius:50%;
+  background:radial-gradient(circle at 40% 38%,#ff917a 0 10%,#d63e3e 11% 52%,#5f1010 53%);
+  box-shadow:0 0 16px rgba(255,83,92,.35)
+}
+.runObject.hazardObj:after{
+  content:"×";display:grid;place-items:center;height:100%;font-size:1.5rem;font-weight:1000;color:#fff
+}
+.runObject.shieldObj{
+  clip-path:polygon(50% 0,88% 22%,100% 60%,50% 100%,0 60%,12% 22%);
+  background:linear-gradient(135deg,#eaffff,#4edcff 40%,#167caf);
+  box-shadow:0 0 18px rgba(78,201,255,.65)
+}
+.runControls{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:650px;margin:10px auto 0
+}
+.runControls button{
+  min-height:62px;border-radius:15px;border:1px solid rgba(255,255,255,.14);
+  background:#25132d;color:#fff;font-size:1.3rem;font-weight:1000
+}
+.runMeta{
+  display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
+  max-width:650px;margin:10px auto 0;font-size:.68rem;letter-spacing:.08em;font-weight:1000;color:#f2dce9
+}
+.combo{color:#ffd96d}
+.shieldOn{color:#8be7ff!important;text-shadow:0 0 8px rgba(78,201,255,.5)}
+
+@media(max-width:520px){
+  .cardPick{grid-template-columns:1fr}
+  .chaosCardBtn{min-height:90px}
+  .runArena{height:315px}
+  .runner{width:52px;height:52px}
+}
+
 @media(max-width:520px){.rpsChoices{gap:7px}.rpsBtn{min-height:94px;font-size:1.8rem}.rpsScore{font-size:.56rem}}
 
 @media(max-width:520px){
@@ -101,20 +260,37 @@ button{font:inherit;cursor:pointer;min-height:44px;touch-action:manipulation}
 <div class="checker"></div><div class="speed"></div><div class="rings"><div class="ringDeco r1"></div><div class="ringDeco r2"></div><div class="ringDeco r3"></div></div>
 <div class="sonicFigure sf1"></div><div class="sonicFigure sf2"></div><div class="sonicFigure sf3"></div>
 <div class="progress" id="progress"></div><div class="flashScreen" id="flashScreen"></div>
-<div class="topbar"><div class="brand">SONIC DAY // <b>PINK LAST STORY</b></div><button class="sound" id="soundBtn">🔊</button></div>
+<div class="topbar"><div class="brand">SONIC DAY <b>PINK LAST STORY</b></div><button class="sound" id="soundBtn">🔊</button></div>
 <div class="emeraldCounter" id="counter">CHAOS EMERALDS ◆ 3 / 7</div>
 
-<section class="screen active" id="s0"><div class="wrap"><div class="kicker">Mission 06 // Final Chapter</div><h1 class="hero">Last <em>Story</em></h1><div class="sub">Pink speed. Seven emeralds. One last day.</div><button class="primary" id="startBtn">BEGIN THE END</button></div></section>
+<section class="screen active" id="s0"><div class="wrap"><div class="kicker">Mission 06 Final Chapter</div><h1 class="hero">Last <em>Story</em></h1><div class="sub">Pink speed. Seven emeralds. One last day.</div><button class="primary" id="startBtn">BEGIN THE END</button></div></section>
 
-<section class="screen" id="s1"><div class="wrap"><div class="story"><div class="kicker">Last Story // Canon Story</div><h2>Mephiles makes his move.</h2><p>In Soleanna Forest, Mephiles ambushes Sonic and fatally wounds him in front of Elise. Elise finally breaks down and cries, releasing the Iblis that had been sealed inside her since childhood.</p><p>Mephiles reunites with Iblis. The two halves of Solaris become whole again, and Solaris begins tearing apart space and time itself.</p><p>Sonic's friends are pulled into the distorted <strong>End of the World</strong>, where the seven Chaos Emeralds have been scattered across broken fragments of reality.</p><button class="primary" data-next="2">END OF THE WORLD</button></div></div></section>
+<section class="screen" id="s1"><div class="wrap"><div class="story">
+    <div class="kicker">LAST STORY</div>
+    <h2>Okay burda işler baya boka sarıyo zaten biliyorsun ama oku ben 2006 izledim</h2>
+    <p>Mephiles geliyo Elise my princess ağlıyo içinde tutulan Iblis de çıkıyor.</p>
+    <p>Sonra Mephiles ve Iblis birleşip Solaris oluyor. Zaman falan komple dağılıyo, herkes End of the World'e savruluyor ve Chaos Emerald'lar da etrafa saçılıyo ıptıs dıptıs.</p>
+    <p>Yani özetle Sonic yok, dünya gidiyor ve bizim yine emerald toplamamız lazım.</p>
+    <button class="primary" data-next="2">DEVAM</button>
+  </div></div></section>
 
-<section class="screen" id="s2"><div class="wrap"><div class="card"><div class="kicker">Destination 01 // Item Zone</div><h2>First signal detected.</h2><div class="destination"><small>GO TO</small><strong>MR.DIY</strong><p>The first real-world Chaos trace is hidden somewhere between shelves full of completely unnecessary but weirdly tempting objects.</p></div><button class="primary" data-next="3">MR.DIY'A ULAŞTIM</button></div></div></section>
+<section class="screen" id="s2"><div class="wrap"><div class="card"><div class="kicker">Destination 01</div><h2>First signal detected.</h2><div class="destination"><small>GO TO</small><strong>MR.DIY</strong><p>The first real-world Chaos trace is hidden somewhere between shelves full of completely unnecessary but weirdly tempting objects.</p></div><button class="primary" data-next="3">MR.DIY'A ULAŞTIM</button></div></div></section>
 
-<section class="screen" id="s3"><div class="wrap"><div class="card"><div class="kicker">MR.DIY // SONIC INVENTORY SEARCH</div><div class="substory"><div class="substoryTitle">BUILD SONIC'S WORST INVENTORY</div><div class="substoryText">You have 3 minutes. Find THREE objects in MR.DIY that could become absurd Sonic power-ups. One must represent SPEED, one CHAOS ENERGY, and one must be so useless that Eggman would probably invent it.</div></div><div class="realMission"><strong>NO BUYING REQUIRED</strong><ul><li>Choose one SPEED item.</li><li>Choose one CHAOS ENERGY item.</li><li>Choose one completely useless EGG-MAN-TECH item.</li><li>Take one photo of the three together and name the fake power-ups.</li></ul></div><div class="joke">Example names are banned. Your own terrible lore is required.</div><button class="primary" data-next="4">INVENTORY COMPLETE</button></div></div></section>
+<section class="screen" id="s3"><div class="wrap"><div class="card">
+    <div class="kicker">MR.DIY DARE ROULETTE</div>
+    <h2>Bir tane cesaret seçilecek.</h2>
+    <p>Telefon random bir görev verecek. Yapıp devam ediyorsun. Game Master sadece şahit.</p>
+    <div class="dareWheel">
+      <div class="dareDisplay" id="mrdiyDare">SPIN'e bas.</div>
+      <div class="dareMeta" id="mrdiyDareMeta">1 GÖREV</div>
+      <button class="primary" id="mrdiySpin" type="button">SPIN</button>
+      <button class="ghost" id="mrdiyDone" type="button" style="display:none">YAPTIM</button>
+    </div>
+  </div></div></section>
 
-<section class="screen" id="s4"><div class="wrap"><div class="card"><div class="kicker">Destination 02 // Supply Route</div><h2>Next signal: Cevahir.</h2><div class="destination"><small>GO TO</small><strong>CEVAHİR // KİLER</strong><p>The next Chaos trace is hidden inside the supply route. Go to Kiler in Cevahir and continue there.</p></div><button class="primary" data-next="5">KİLER'E ULAŞTIM</button></div></div></section>
+<section class="screen" id="s4"><div class="wrap"><div class="card"><div class="kicker">Destination 02</div><h2>Next signal: Cevahir.</h2><div class="destination"><small>GO TO</small><strong>CEVAHIR KILER</strong><p>The next Chaos trace is hidden inside the supply route. Go to Kiler in Cevahir and continue there.</p></div><button class="primary" data-next="5">KILER'E ULAŞTIM</button></div></div></section>
 
-<section class="screen" id="s5"><div class="wrap"><div class="card"><div class="kicker">KİLER // CHAOS SUPPLY RUN</div><h2>Pick something for each other.</h2>
+<section class="screen" id="s5"><div class="wrap"><div class="card"><div class="kicker">KILER CHAOS SUPPLY RUN</div><h2>Pick something for each other.</h2>
 <div class="realMission"><strong>RULES</strong><ul><li>Set a tiny budget first.</li><li>Each person secretly chooses ONE drink, snack or tiny item for the other.</li><li>No asking what they want.</li><li>You only reveal your picks after both people have chosen.</li></ul></div>
 <div class="bonusBoard"><h3>BONUS CHAOS POINTS</h3><div class="bonusGrid">
 <button class="bonusBtn" data-points="1">🥤 Drink / coffee / beverage <b>+1</b></button>
@@ -123,80 +299,182 @@ button{font:inherit;cursor:pointer;min-height:44px;touch-action:manipulation}
 <button class="bonusBtn" data-points="3">🌀 Ridiculous but weirdly perfect <b>+3</b></button>
 <button class="bonusBtn" data-points="2">🍫 Snack they would pick themselves <b>+2</b></button>
 <button class="bonusBtn" data-points="2">✨ Both of you independently nailed it <b>+2</b></button>
-</div><div class="bonusTotal" id="bonusTotal">BONUS SCORE // 0 CHAOS POINTS</div></div>
+</div><div class="bonusTotal" id="bonusTotal">BONUS SCORE 0 CHAOS POINTS</div></div>
 <div class="joke">Buying plain water for each other is technically allowed. It also generates exactly zero romance lore.</div>
 <button class="primary" data-next="6">SUPPLIES REVEALED</button></div></div></section>
 
 <section class="screen" id="s6"><div class="wrap"><div class="card"><div class="kicker">Chaos Emerald Recovered</div><div class="emerald red"></div><h2>RED CHAOS EMERALD</h2><div class="claim">Game Master hands over the physical RED emerald.</div><button class="primary" id="redClaim">EMERALD SECURED</button></div></div></section>
 
-<section class="screen" id="s7"><div class="wrap"><div class="card"><div class="kicker">SONIC 06 // CHARACTER SYNC</div><h2>Assign the roles.</h2>
-<div class="realMission"><strong>NO GENERIC RELATIONSHIP QUESTIONS</strong><p>Both of you secretly assign each other ONE Sonic 06 role from the list below. Then reveal at the same time and defend your choice.</p></div>
-<div class="missionGrid">
-<div class="missionChip"><b>SONIC</b><p>Runs into chaos first and figures it out later.</p></div>
-<div class="missionChip"><b>SHADOW</b><p>Acts like everything is under control even when reality is collapsing.</p></div>
-<div class="missionChip"><b>SILVER</b><p>Has good intentions and somehow creates a new problem anyway.</p></div>
-<div class="missionChip"><b>TAILS</b><p>Actually keeps the mission functioning while everyone else causes drama.</p></div>
-</div>
-<div class="joke">If both of you choose Shadow for yourselves, Mephiles wins automatically.</div>
-<button class="primary" data-next="8">ROLES REVEALED</button></div></div></section>
+<section class="screen" id="s7"><div class="wrap"><div class="card">
+    <div class="kicker">CHAOS CARDS</div>
+    <h2>Pick one. No reroll.</h2>
+    <p>Birthday Princess chooses one card. The phone reveals the dare. Game Master is part of the dare, not a second phone player.</p>
+    <div class="cardPick">
+      <button class="chaosCardBtn" data-chaos-card="0" type="button"><span>◆</span>CARD 1</button>
+      <button class="chaosCardBtn" data-chaos-card="1" type="button"><span>◆</span>CARD 2</button>
+      <button class="chaosCardBtn" data-chaos-card="2" type="button"><span>◆</span>CARD 3</button>
+    </div>
+    <div class="chaosCardText" id="chaosCardText">Choose one card.</div>
+    <button class="primary" id="chaosCardDone" type="button" style="display:none">DARE COMPLETE</button>
+  </div></div></section>
 
-<section class="screen" id="s8"><div class="wrap"><div class="card"><div class="kicker">SONIC 06 // TIMELINE PREDICTION</div><h2>Predict their Sonic answer.</h2><div class="predictGrid">
-<div class="predict"><b>1</b>If the other person had to survive ONE Sonic 06 level in real life: Wave Ocean, Dusty Desert, Crisis City or White Acropolis?</div>
-<div class="predict"><b>2</b>Which character would the other person trust most to get them home: Sonic, Shadow, Silver or Tails?</div>
-<div class="predict"><b>3</b>Which Sonic 06 disaster would annoy them most: broken time, endless lava, Eggman machinery or Silver repeatedly attacking the wrong person?</div>
-<div class="predict"><b>4</b>If they had one Chaos ability for a day: super speed, Chaos Control, psychokinesis or flying with Tails?</div>
-</div><div class="realMission"><strong>HOW</strong><p>Both secretly predict the OTHER person's four answers. Reveal together. Every exact match earns 1 CHAOS POINT.</p></div><button class="primary" data-next="9">TIMELINE ANSWERS REVEALED</button></div></div></section>
+<section class="screen" id="s8"><div class="wrap"><div class="card">
+    <div class="kicker">LOVIFY BATTLE</div>
+    <h2>Winner gets one wish.</h2>
+    <p>Open Lovify and play one full game together. This site will wait here.</p>
+    <div class="realMission">
+      <strong>THE STAKE</strong>
+      <p>Whoever wins gets one reasonable "istediğimi yaptırma hakkı (sexual olur)" to use today</p>
+      <p>The loser has to accept it because she is a loser.</p>
+    </div>
+    <div class="challengeBox">
+      <div class="challengeName">ONE MATCH. NO MERCY.</div>
+      <div class="challengeText">Before you start, both say your requested prize out loud. No changing it after seeing the score.</div>
+    </div>
+    <button class="primary" data-next="9" type="button">LOVIFY FINISHED</button>
+  </div></div></section>
 
-<section class="screen" id="s9"><div class="wrap"><div class="card"><div class="kicker">SONIC 06 SPEED DEBATE</div><h2>Defend the worst take.</h2>
-<div class="realMission"><strong>GAME MASTER CHOOSES ONE</strong><ul><li>“Silver was completely right to attack Sonic.”</li><li>“Sonic 06 loading screens improve the experience.”</li><li>“Elise is the most strategically useful character in the game.”</li><li>“Eggman's plan was actually extremely efficient.”</li></ul><p>The player gets 30 seconds to defend the chosen statement as seriously as possible.</p></div>
-<div class="joke">Laughing during your own argument damages academic credibility.</div>
-<button class="primary" data-next="10">BAD TAKE DEFENDED</button></div></div></section>
+<section class="screen" id="s9"><div class="wrap"><div class="card">
+    <div class="kicker">CRINGE PHOTO MISSION</div>
+    <h2>Take the worst birthday photo possible.</h2>
+    <p>This is not supposed to be a good photo. The mission is to produce something that looks like it should never have left a 2016 Snapchat story.</p>
+    <div class="realMission">
+      <strong>PHOTO RULES</strong>
+      <ul>
+        <li>Take it together.</li>
+        <li>Use the most unnecessary pose you can think of.</li>
+        <li>Add one aggressively cringe expression.</li>
+        <li>If Snaple available, use it. Otherwise use the normal camera.</li>
+        <li>The photo must be saved. Deleting the evidence is forbidden.</li>
+      </ul>
+    </div>
+    <div class="joke">Bonus respect if one of you looks like a divorced Facebook dad.</div>
+    <button class="primary" data-next="10" type="button">EVIDENCE SAVED</button>
+  </div></div></section>
 
-<section class="screen" id="s10"><div class="wrap"><div class="card"><div class="kicker">SONIC 06 BOSS DESIGN LAB</div><h2>Create the worst boss fight.</h2>
-<div class="realMission"><strong>30 SECOND DESIGN</strong><p>Together invent a fake Sonic 06 boss using ONE object you can currently see.</p><ul><li>Give it a ridiculous boss name.</li><li>Give it one unfair attack.</li><li>Give it one stupid weakness.</li><li>Decide which character would beat it fastest.</li></ul></div>
-<div class="joke">If the boss requires more than three loading screens, it is canon-compliant.</div>
-<button class="primary" data-next="11">BOSS DESIGNED</button></div></div></section>
+<section class="screen" id="s10"><div class="wrap"><div class="card">
+    <div class="kicker">SECRET MISSIONS</div>
+    <h2>Do not let the other person see your mission.</h2>
+    <p>The phone will give each of you one secret task to complete sometime before the end of the day. You are not allowed to reveal the task until both missions have happened.</p>
 
-<section class="screen" id="s11"><div class="wrap"><div class="card"><div class="kicker">SONIC 06  LOADING SCREEN CHALLENGE</div><h2>Fill the loading screen.</h2>
-<div class="realMission"><strong>20 SECONDS EACH</strong><p>One person gives the other a completely useless Sonic 06-style loading-screen tip. Then switch.</p><ul><li>It must sound vaguely helpful.</li><li>It must actually explain almost nothing.</li><li>Bonus if it contradicts itself.</li></ul></div>
-<div class="joke">“Press buttons to play the game” is considered expert-level game design.</div>
-<button class="primary" data-next="12">LOADING COMPLETE</button></div></div></section>
+    <div class="secretMissionBox">
+      <div class="secretStep" id="secretStep">Give the phone to Birthday Princess.</div>
+      <div class="secretCard" id="secretCard">
+        <div class="secretCover" id="secretCover">PRIVATE MISSION</div>
+        <div class="secretText" id="secretText"></div>
+      </div>
+      <button class="primary" id="secretAction" type="button">PRINCESS HAS THE PHONE</button>
+      <button class="ghost" id="secretHide" type="button" style="display:none">I MEMORIZED IT</button>
+    </div>
 
-<section class="screen" id="s12"><div class="wrap"><div class="card"><div class="kicker">Chaos Emerald Recovered</div><div class="emerald yellow"></div><h2>YELLOW CHAOS EMERALD</h2><div class="claim">Game Master hands over the physical YELLOW emerald.</div><button class="primary" id="yellowClaim">EMERALD SECURED</button></div></div></section>
+    <div class="status" id="secretStatus">Only the person holding the phone should look at the screen.</div>
+    <button class="primary" id="secretContinue" type="button" style="display:none">BOTH MISSIONS LOCKED</button>
+  </div></div></section>
 
-<section class="screen" id="s13"><div class="wrap"><div class="card"><div class="kicker">Relationship Archive</div><h2>Who said it?</h2><div class="realMission"><strong>GAME MASTER</strong><p>Find three old chat lines or memorable quotes. Read them without context.</p><strong>PLAYER</strong><p>Guess: YOU / GAME MASTER / BOTH WOULD ABSOLUTELY SAY THIS.</p></div><div class="joke">Embarrassing screenshots generate additional Chaos energy.</div><button class="primary" data-next="14">ARCHIVE CLEARED</button></div></div></section>
+<section class="screen" id="s11"><div class="wrap"><div class="card">
+    <div class="kicker">CHAOS SYNC</div>
+    <h2>Both hands. Same time.</h2>
+    <p>Put the phone between you. Birthday Princess holds the left button. Game Master holds the right button. Keep both pressed together until the Chaos bar fills.</p>
+    <div class="syncHoldBox">
+      <div class="syncHands">
+        <button class="syncHand" id="syncPrincess" type="button">BIRTHDAY PRINCESS</button>
+        <button class="syncHand" id="syncMaster" type="button">GAME MASTER</button>
+      </div>
+      <div class="syncBar"><div class="syncBarFill" id="syncBarFill"></div></div>
+      <div class="status" id="syncHoldStatus">Hold both for 3 seconds.</div>
+    </div>
+  </div></div></section>
 
-<section class="screen" id="s14"><div class="wrap"><div class="card"><div class="kicker">SUBSTORY 06-B // Soundtrack Mission</div><div class="substory"><div class="substoryTitle">YOUR BOSS THEME IS...</div><div class="substoryText">Without discussing first, each person chooses one song that would play if the OTHER person suddenly became a video-game boss.</div></div><div class="realMission"><strong>RULES</strong><ol><li>Choose secretly.</li><li>Don't use their actual favourite song just because it is easy.</li><li>Play only the first 20–30 seconds.</li><li>Explain the unnecessary lore.</li></ol><p>Bonus: give the boss a ridiculous phase-two title.</p></div><button class="primary" data-next="15">BOSS THEMES REVEALED</button></div></div></section>
+<section class="screen" id="s12"><div class="wrap"><div class="card">
+    <div class="kicker">SONIC SOUND TEST</div>
+    <h2>Make the sound. Guess the event.</h2>
+    <div class="realMission">
+      <p>Game Master secretly chooses one event: collecting a ring, losing all rings, Chaos Control, Eggman arriving, Silver using psychokinesis, or Sonic hitting a wall.</p>
+      <p>Game Master may only make a sound effect. Birthday Princess gets three guesses. Then switch once.</p>
+    </div>
+    <button class="primary" data-next="13" type="button">SOUND TEST CLEARED</button>
+  </div></div></section>
 
-<section class="screen" id="s15"><div class="wrap"><div class="card"><div class="kicker">Chaos Emerald Recovered</div><div class="emerald purple"></div><h2>PURPLE CHAOS EMERALD</h2><div class="claim">Game Master hands over the physical PURPLE emerald.</div><button class="primary" id="purpleClaim">EMERALD SECURED</button></div></div></section>
+<section class="screen" id="s13"><div class="wrap"><div class="card"><div class="kicker">Chaos Emerald Recovered</div><div class="emerald yellow"></div><h2>YELLOW CHAOS EMERALD</h2><div class="claim">Game Master hands over the physical YELLOW emerald.</div><button class="primary" id="yellowClaim">EMERALD SECURED</button></div></div></section>
 
-<section class="screen" id="s16"><div class="wrap"><div class="story"><div class="kicker">End of the World // Canon Story</div><h2>Bring Sonic back.</h2><p>In the distorted world, Elise senses Sonic's presence in the wind. Silver realizes the Chaos Emeralds may be able to call him back.</p><p>Eggman detects that Solaris has scattered the seven emeralds throughout the broken world. Shadow, Tails, Knuckles, Amy, Silver, Rouge and Omega split up to recover them while Elise stays with Sonic.</p><p>In our real-world layer, six of the seven physical emeralds are now accounted for. One remains.</p><button class="primary" data-next="17">FINAL SIGNAL</button></div></div></section>
+<section class="screen" id="s14"><div class="wrap"><div class="card"><</div><h2>Who said it?</h2><div class="realMission"><strong>GAME MASTER</strong><p>Find three old chat lines or memorable quotes. Read them without context.</p><strong>PLAYER</strong><p>Guess: YOU / GAME MASTER / BOTH WOULD ABSOLUTELY SAY THIS.</p></div><div class="joke">Embarrassing screenshots generate additional Chaos energy.</div><button class="primary" data-next="15">ARCHIVE CLEARED</button></div></div></section>
 
-<section class="screen" id="s17"><div class="wrap"><div class="card"><div class="kicker">EGGMAN // QUICK BATTLE</div><h2>Rock. Paper. Scissors.</h2><p>Eggman is blocking the final Chaos signal with the most technologically advanced weapon he could build: <strong>taş-kâğıt-makas.</strong></p><div class="rpsScore"><span id="rpsPlayer">MINNAK 0</span><span>FIRST TO 3</span><span id="rpsEggman">EGGMAN 0</span></div><div class="rpsResult" id="rpsResult">CHOOSE YOUR MOVE</div><div class="rpsChoices"><button class="rpsBtn" data-rps="rock" type="button">✊<small>ROCK</small></button><button class="rpsBtn" data-rps="paper" type="button">✋<small>PAPER</small></button><button class="rpsBtn" data-rps="scissors" type="button">✌️<small>SCISSORS</small></button></div><div class="status" id="rpsStatus">Defeat Eggman to recover the final emerald.</div><button class="primary" id="rpsContinue" type="button" style="display:none">EGGMAN DEFEATED</button></div></div></section>
+<section class="screen" id="s15"><div class="wrap"><div class="card"><div class="kicker">SUBSTORY 06-B Soundtrack Mission</div><div class="substory"><div class="substoryTitle">YOUR BOSS THEME IS...</div><div class="substoryText">Without discussing first, each person chooses one song that would play if the OTHER person suddenly became a video-game boss.</div></div><div class="realMission"><strong>RULES</strong><ol><li>Choose secretly.</li><li>Don't use their actual favourite song just because it is easy.</li><li>Play only the first 20–30 seconds.</li><li>Explain the unnecessary lore.</li></ol><p>Bonus: give the boss a ridiculous phase-two title.</p></div><button class="primary" data-next="16">BOSS THEMES REVEALED</button></div></div></section>
 
-<section class="screen" id="s18"><div class="wrap"><div class="card"><div class="kicker">Final Chaos Emerald</div><div class="emerald white"></div><h2>WHITE CHAOS EMERALD</h2><div class="claim">Game Master hands over the last physical emerald.</div><button class="primary" id="whiteClaim">ALL EMERALDS READY</button></div></div></section>
+<section class="screen" id="s16"><div class="wrap"><div class="story">
+    <div class="kicker">END OF THE WORLD</div>
+    <h2>Sonic'i geri getirme zamanı.</h2>
+    <p>Elise Sonic'in hâlâ bir şekilde orada olduğunu hissediyor. Silver da emeraldlarla onu geri getirebileceklerini düşünüyor.</p>
+    <p>Herkes dağılıp Chaos Emerald'ları topluyor. Bizde de artık sonlara geliyoruz my birthday bebe.</p>
+    <p>Bir tane kaldı.</p>
+    <button class="primary" data-next="17">SON EMERALD</button>
+  </div></div></section>
 
-<section class="screen" id="s19"><div class="wrap"><div class="card"><div class="kicker">End of the World // 7 / 7</div><h2>Place all seven Chaos Emeralds together.</h2><div class="realMission"><strong>CHAOS EMERALDS</strong><ul><li>Blue</li><li>Green</li><li>Turquoise</li><li>Red</li><li>Yellow</li><li>Purple</li><li>White</li></ul></div><p>Everyone returns with the scattered emeralds and surrounds Sonic with them. Elise focuses her wish on bringing him back.</p><button class="primary" data-next="20">ALL 7 ARE HERE</button></div></div></section>
+<section class="screen" id="s17"><div class="wrap"><div class="story"><div class="kicker">End of the World Canon Story</div><h2>Bring Sonic back.</h2><p>In the distorted world, Elise senses Sonic's presence in the wind. Silver realizes the Chaos Emeralds may be able to call him back.</p><p>Eggman detects that Solaris has scattered the seven emeralds throughout the broken world. Shadow, Tails, Knuckles, Amy, Silver, Rouge and Omega split up to recover them while Elise stays with Sonic.</p><p>In our real-world layer, six of the seven physical emeralds are now accounted for. One remains.</p><button class="primary" data-next="18">FINAL SIGNAL</button></div></div></section>
 
-<section class="screen" id="s20"><div class="wrap"><div class="card"><div class="kicker">Wishing Upon The Chaos Emeralds</div><h2>Call Sonic back.</h2><p>Elise's wish and the Chaos Emeralds restore Sonic. Complete the real-world synchronization to trigger the transformation.</p><p>Both hold your buttons together for 4 seconds.</p><div class="dualBox"><div class="holdRow"><button class="holdBtn" id="holdA">PLAYER</button><button class="holdBtn" id="holdB">GAME MASTER</button></div><div class="charge"><div class="chargeFill" id="chargeFill"></div></div><div class="status" id="chargeStatus">0%</div></div></div></div></section>
+<section class="screen" id="s18"><div class="wrap"><div class="card"><div class="kicker">EGGMAN QUICK BATTLE</div><h2>Rock. Paper. Scissors.</h2><p>Eggman is blocking the final Chaos signal with the most technologically advanced weapon he could build: <strong>taş-kâğıt-makas.</strong></p><div class="rpsScore"><span id="rpsPlayer">MINNAK 0</span><span>FIRST TO 3</span><span id="rpsEggman">EGGMAN 0</span></div><div class="rpsResult" id="rpsResult">CHOOSE YOUR MOVE</div><div class="rpsChoices"><button class="rpsBtn" data-rps="rock" type="button">✊<small>ROCK</small></button><button class="rpsBtn" data-rps="paper" type="button">✋<small>PAPER</small></button><button class="rpsBtn" data-rps="scissors" type="button">✌️<small>SCISSORS</small></button></div><div class="status" id="rpsStatus">Defeat Eggman to recover the final emerald.</div><button class="primary" id="rpsContinue" type="button" style="display:none">EGGMAN DEFEATED</button></div></div></section>
 
-<section class="screen" id="s21"><div class="wrap"><div class="story"><div class="kicker">Sonic Returns // Canon Story</div><h2>Super Sonic. Super Shadow. Super Silver.</h2><p>The seven Chaos Emeralds answer Elise's wish and Sonic is revived. Sonic shares their power with Shadow and Silver, transforming all three into their Super forms.</p><p>Solaris exists across past, present and future at once. The three heroes rise to confront it together.</p><button class="primary" data-next="22">FINAL BATTLE</button></div></div></section>
+<section class="screen" id="s19"><div class="wrap"><div class="card"><div class="kicker">Final Chaos Emerald</div><div class="emerald white"></div><h2>WHITE CHAOS EMERALD</h2><div class="claim">Game Master hands over the last physical emerald.</div><button class="primary" id="whiteClaim">ALL EMERALDS READY</button></div></div></section>
 
-<section class="screen" id="s22"><div class="wrap"><div class="card"><div class="kicker">Solaris // Three Heroes</div><h2>Three phases.</h2><div class="bossMeter"><div class="bossFill" id="bossFill"></div></div><div class="heroGrid"><button class="heroBtn" data-hero="sonic">SONIC<br><small>Speed</small></button><button class="heroBtn" data-hero="shadow">SHADOW<br><small>Control</small></button><button class="heroBtn" data-hero="silver">SILVER<br><small>Power</small></button></div><div class="status" id="bossStatus">PHASE 1 / 3</div><div class="joke">Solaris would like to remind you that button mashing is not strategy.</div></div></div></section>
+<section class="screen" id="s20"><div class="wrap"><div class="card"><div class="kicker">End of the World 7 OF 7</div><h2>Place all seven Chaos Emeralds together.</h2><div class="realMission"><strong>CHAOS EMERALDS</strong><ul><li>Blue</li><li>Green</li><li>Turquoise</li><li>Red</li><li>Yellow</li><li>Purple</li><li>White</li></ul></div><p>Everyone returns with the scattered emeralds and surrounds Sonic with them. Elise focuses her wish on bringing him back.</p><button class="primary" data-next="21">ALL 7 ARE HERE</button></div></div></section>
 
-<section class="screen" id="s23"><div class="wrap"><div class="story"><div class="kicker">After Solaris // Canon Story</div><h2>The true Solaris remains.</h2><p>After Super Sonic, Super Shadow and Super Silver defeat Solaris, Sonic and Elise are drawn toward a tiny white flame.</p><p>This is Solaris at its origin: the <strong>Flame of Hope</strong>, before the Solaris Project ever caused the disaster.</p><p>If Elise extinguishes it, Solaris will never exist — but the events that brought her and Sonic together will also never happen.</p><button class="primary" data-next="24">THE FINAL CHOICE</button></div></div></section>
+<section class="screen" id="s21"><div class="wrap"><div class="story">
+    <div class="kicker">SONIC GERI GELDI</div>
+    <h2>Super Sonic zamanı.</h2>
+    <p>Emeraldlar Sonic'i geri getiriyor. Sonra Sonic, Shadow ve Silver üçü de Super forma geçiyor.</p>
+    <p>Solaris geçmişte, şimdi ve gelecekte aynı anda var olduğu için üçü beraber dalıyorlar.</p>
+    <button class="primary" data-next="22">SOLARIS'E DAL</button>
+  </div></div></section>
 
-<section class="screen" id="s24"><div class="wrap"><div class="story"><div class="kicker">Flame of Hope // Canon Ending</div><h2>The timeline is rewritten.</h2><p>Elise hesitates because extinguishing Solaris means losing the history she shared with Sonic. Sonic encourages her to smile, and she finally blows out the tiny flame.</p><p>Solaris, Iblis and Mephiles are erased from history. Time resets to the Festival of the Sun — but this time Eggman's attack never happens.</p><p>During the peaceful festival, Sonic races through Soleanna. The wind from his speed catches Elise's feather. She feels a strange familiarity she cannot explain.</p><div class="finalBox"><small>SONIC THE HEDGEHOG (2006)</small><strong>STORY COMPLETE</strong></div><button class="primary" data-next="25">POST-CREDITS</button></div></div></section>
+<section class="screen" id="s22"><div class="wrap"><div class="story"><div class="kicker">Sonic Returns Canon Story</div><h2>Super Sonic. Super Shadow. Super Silver.</h2><p>The seven Chaos Emeralds answer Elise's wish and Sonic is revived. Sonic shares their power with Shadow and Silver, transforming all three into their Super forms.</p><p>Solaris exists across past, present and future at once. The three heroes rise to confront it together.</p><button class="primary" data-next="23">FINAL BATTLE</button></div></div></section>
 
-<section class="screen" id="s25"><div class="wrap"><div class="card"><div class="kicker">POST-CREDITS // ???</div><h2>Wait. One signal survived.</h2><p>This is no longer part of the Sonic 06 timeline.</p><p style="color:#ff9dcc;font-weight:1000">REAL-WORLD BONUS STAGE DETECTED.</p><button class="primary" data-next="26">TRACE SIGNAL</button></div></div></section>
+<section class="screen" id="s23"><div class="wrap"><div class="story">
+    <div class="kicker">SOLARIS SONRASI</div>
+    <h2>Bir de şu küçük alev hah flame of hope</h2>
+    <p>Solaris yeniliyor ama Sonic ve Elise en baştaki küçük Flame of Hope'a gidiyor.</p>
+    <p>Elise bunu söndürürse Solaris hiç var olmamış olacak. Ama yaşanan her şey de silinecek.</p>
+    <button class="primary" data-next="24">SÖNDÜR</button>
+  </div></div></section>
 
-<section class="screen" id="s26"><div class="wrap"><div class="card"><div class="kicker">FINAL DESTINATION // LAST REAL-WORLD CHECKPOINT</div><h2>The final place.</h2><div class="destination"><small>FINAL LOCATION</small><strong>YALINCAK PLAJI</strong><p>No more intermediate locations. The last surviving Chaos signal is at Yalıncak Plajı. Go there to unlock the final vehicle stage.</p></div><div class="sub" style="color:#ff93c8">THE CAR IS STILL LOCKED</div><button class="primary" data-next="27">YALINCAK PLAJI'NA ULAŞTIM</button></div></div></section>
+<section class="screen" id="s24"><div class="wrap"><div class="story">
+    <div class="kicker">ENDING</div>
+    <h2>Ve timeline reset.</h2>
+    <p>Elise alevi söndürüyor. Solaris, Iblis, Mephiles falan hiç olmamış gibi oluyor.</p>
+    <p>Festival yeniden yaşanıyor. Sonic yine oradan geçiyor, Elise de bir şeyleri hatırlıyormuş gibi hissediyor ama tam olarak hatırlamıyor.</p>
+    <div class="finalBox"><small>SONIC THE HEDGEHOG 2006</small><strong>STORY COMPLETE</strong></div>
+    <button class="primary" data-next="25">POST CREDITS</button>
+  </div></div></section>
 
-<section class="screen" id="s27"><div class="wrap"><div class="card"><div class="kicker">Bonus Stage // Key Energy</div><h2>Catch the Sonic signal! ♡</h2><p>Catch the moving Sonic signal <strong>7 times</strong> to unlock the car key.</p><div class="catchArena" id="catchArena"><button class="catchTarget" id="catchTarget" aria-label="Catch Sonic signal"></button><div class="heartPop" id="heartPop">✦</div></div><div class="catchMeta"><span id="catchCount">RINGS 0 / 7</span><span id="catchTimer">20.0s</span></div><div class="status" id="catchStatus">PRESS START</div><button class="primary" id="catchStart">START SPEED CATCH</button></div></div></section>
+<section class="screen" id="s25"><div class="wrap"><div class="story"><div class="kicker">Flame of Hope Canon Ending</div><h2>The timeline is rewritten.</h2><p>Elise hesitates because extinguishing Solaris means losing the history she shared with Sonic. Sonic encourages her to smile, and she finally blows out the tiny flame.</p><p>Solaris, Iblis and Mephiles are erased from history. Time resets to the Festival of the Sun — but this time Eggman's attack never happens.</p><p>During the peaceful festival, Sonic races through Soleanna. The wind from his speed catches Elise's feather. She feels a strange familiarity she cannot explain.</p><div class="finalBox"><small>SONIC THE HEDGEHOG (2006)</small><strong>STORY COMPLETE</strong></div><button class="primary" data-next="26">POST-CREDITS</button></div></div></section>
 
-<section class="screen" id="s28"><div class="wrap"><div class="card"><div class="kicker">VEHICLE ACCESS // UNLOCKED</div><h2>CAR UNLOCKED.</h2><div class="carUnlock"><div class="carIcon">🚗</div><div class="keyPulse">🔑</div><p><strong>KEY ACCESS GRANTED.</strong><br><br>Ask the Game Master for the physical car key. The final reward is now accessible.</p></div><button class="primary" data-next="29">ANAHTARI ALDIM 🔑</button></div></div></section>
+<section class="screen" id="s26"><div class="wrap"><div class="card"><div class="kicker">POST CREDITS</div><h2>Wait. One signal survived.</h2><p>This is no longer part of the Sonic 06 timeline.</p><p style="color:#ff9dcc;font-weight:1000">REAL-WORLD BONUS STAGE DETECTED.</p><button class="primary" data-next="27">TRACE SIGNAL</button></div></div></section>
 
-<section class="screen" id="s29"><div class="wrap"><div class="card"><div class="kicker">SONIC DAY // REAL-WORLD ENDING</div><h2>Final checkpoint.</h2><div class="destination"><small>YALINCAK PLAJI // VEHICLE</small><strong>ARABAYA GİT</strong><p>Take the key. Go to the car and open the trunk. Your final reward is waiting there.</p></div><div class="sub" style="color:#ff93c8">MISSION COMPLETE ♡</div></div></div></section>
+<section class="screen" id="s27"><div class="wrap"><div class="card"><div class="kicker">FINAL DESTINATION</div><h2>The final place.</h2><div class="destination"><small>FINAL LOCATION</small><strong>YALINCAK PLAJI</strong><p>No more intermediate locations. The last surviving Chaos signal is at Yalıncak Plajı. Go there to unlock the final vehicle stage.</p></div><div class="sub" style="color:#ff93c8">THE CAR IS STILL LOCKED</div><button class="primary" data-next="28">YALINCAK PLAJI'NA ULAŞTIM</button></div></div></section>
+
+<section class="screen" id="s28"><div class="wrap"><div class="card">
+    <div class="kicker">YALINCAK COAST RUN</div>
+    <h2>Run for the car key.</h2>
+    <p>Birthday Princess controls Sonic alone. Switch lanes, collect twelve rings, avoid Eggman hazards and grab Chaos shields. A shield blocks one hit. Three unshielded hits end the run.</p>
+    <div class="runArena" id="runArena">
+      <div class="runner" id="runner"></div>
+    </div>
+    <div class="runControls">
+      <button id="runLeft" type="button">◀ LEFT</button>
+      <button id="runRight" type="button">RIGHT ▶</button>
+    </div>
+    <div class="runMeta">
+      <span id="runRings">RINGS 0 OF 12</span>
+      <span id="runHits">DAMAGE 0 OF 3</span>
+      <span id="runCombo" class="combo">COMBO 0</span>
+      <span id="runShield">SHIELD OFF</span>
+    </div>
+    <div class="status" id="runStatus">Reach twelve rings to unlock the car.</div>
+    <button class="primary" id="runStart" type="button">START COAST RUN</button>
+  </div></div></section>
+
+<section class="screen" id="s29"><div class="wrap"><div class="card"><div class="kicker">VEHICLE ACCESS UNLOCKED</div><h2>CAR UNLOCKED.</h2><div class="carUnlock"><div class="carIcon">🚗</div><div class="keyPulse">🔑</div><p><strong>KEY ACCESS GRANTED.</strong><br><br>Ask the Game Master for the physical car key. The final reward is now accessible.</p></div><button class="primary" data-next="30">ANAHTARI ALDIM 🔑</button></div></div></section>
+
+<section class="screen" id="s30"><div class="wrap"><div class="card"><div class="kicker">SONIC DAY REAL-WORLD ENDING</div><h2>Final checkpoint.</h2><div class="destination"><small>YALINCAK PLAJI VEHICLE</small><strong>ARABAYA GIT</strong><p>Take the key. Go to the car and open the trunk. Your final reward is waiting there.</p></div><div class="sub" style="color:#ff93c8">MISSION COMPLETE ♡</div></div></div></section>
 </div>
 
 <script>
@@ -225,14 +503,249 @@ function show(n){
 document.getElementById('startBtn').addEventListener('click',()=>{initAudio();setMusic('doom');show(1)});
 document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.next))));
 document.getElementById('redClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 4 / 7';sfx('emerald');flashNow();show(7)});
-document.getElementById('yellowClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 5 / 7';sfx('emerald');flashNow();show(13)});
-document.getElementById('purpleClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 6 / 7';sfx('emerald');flashNow();show(16)});
-document.getElementById('whiteClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 7 / 7';sfx('emerald');flashNow();show(19)});
+document.getElementById('yellowClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 5 / 7';sfx('emerald');flashNow();show(14)});
+document.getElementById('purpleClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 6 / 7';sfx('emerald');flashNow();show(17)});
+document.getElementById('whiteClaim').addEventListener('click',()=>{counter.textContent='CHAOS EMERALDS ◆ 7 / 7';sfx('emerald');flashNow();show(20)});
 
 /* bonus score */
 const bonusBtns=[...document.querySelectorAll('.bonusBtn')],bonusTotal=document.getElementById('bonusTotal');
-function updateBonus(){const score=bonusBtns.reduce((s,b)=>s+(b.classList.contains('active')?Number(b.dataset.points):0),0);bonusTotal.textContent='BONUS SCORE // '+score+' CHAOS POINTS';if(score>=6)bonusTotal.textContent+=' ✦ LEGENDARY PICK';}
+function updateBonus(){const score=bonusBtns.reduce((s,b)=>s+(b.classList.contains('active')?Number(b.dataset.points):0),0);bonusTotal.textContent='BONUS SCORE '+score+' CHAOS POINTS';if(score>=6)bonusTotal.textContent+=' ✦ LEGENDARY PICK';}
 bonusBtns.forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('active');sfx('good');updateBonus()}));
+
+
+
+/* MR DIY DARE ROULETTE */
+const mrdiyDare=document.getElementById('mrdiyDare');
+const mrdiySpin=document.getElementById('mrdiySpin');
+const mrdiyDone=document.getElementById('mrdiyDone');
+const mrdiyDares=[
+  'Game Master bir ürün seçsin. Onu 20 saniye boyunca aşırı ciddi şekilde satmaya çalış.',
+  'Game Master sana üç kelime versin. 15 saniyede saçma bir hikaye uydur.',
+  'Game Master bir şey seçsin. Ona aşırı gereksiz bir isim koy ve ne işe yaradığını anlat.',
+  'Game Master bir poz seçsin. 10 saniye bozmadan o pozda kal.',
+  'Game Master sana saçma bir senaryo versin. 15 saniye boyunca ciddi ciddi savun.',
+  'Game Master bir kelime söylesin. O kelimeyle 10 saniyelik reklam uydur.'
+];
+let mrdiyChosen=false;
+mrdiySpin.addEventListener('click',()=>{
+  mrdiySpin.disabled=true;mrdiyDone.style.display='none';mrdiyDare.classList.add('dareSpin');
+  let spins=0;
+  const spinTimer=setInterval(()=>{
+    mrdiyDare.textContent=mrdiyDares[Math.floor(Math.random()*mrdiyDares.length)];
+    sfx('ui');spins++;
+    if(spins>=10){
+      clearInterval(spinTimer);
+      mrdiyDare.classList.remove('dareSpin');
+      mrdiyChosen=true;
+      mrdiyDone.style.display='inline-block';
+    }
+  },90);
+});
+mrdiyDone.addEventListener('click',()=>{if(mrdiyChosen)show(4)});
+
+/* CHAOS CARDS */
+const chaosCardButtons=[...document.querySelectorAll('.chaosCardBtn')];
+const chaosCardText=document.getElementById('chaosCardText');
+const chaosCardDone=document.getElementById('chaosCardDone');
+const chaosDares=[
+  'Game Master has twenty seconds to make Birthday Princess laugh. No touching. Princess wins if she survives.',
+  'Game Master chooses a Sonic character. Birthday Princess must act like that character while ordering an imaginary drink.',
+  'Birthday Princess gives Game Master a random object. Game Master has ten seconds to explain why it is secretly a Chaos Emerald. Princess decides if the story is acceptable.',
+  'Game Master chooses three words. Birthday Princess has fifteen seconds to improvise a Sonic 06 boss introduction using all three.',
+  'Birthday Princess must perform a ten second Sonic running scene in slow motion while Game Master provides the sound effects.',
+  'Game Master names a Sonic 06 location. Birthday Princess has fifteen seconds to invent the worst possible tourist advertisement for it.'
+];
+let chaosCardPicked=false;
+chaosCardButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  if(chaosCardPicked)return;
+  chaosCardPicked=true;
+  chaosCardButtons.forEach(x=>x.disabled=true);
+  btn.classList.add('revealed');
+  chaosCardText.textContent=chaosDares[Math.floor(Math.random()*chaosDares.length)];
+  chaosCardDone.style.display='inline-block';
+  sfx('good');
+}));
+chaosCardDone.addEventListener('click',()=>{if(chaosCardPicked)show(8)});
+
+/* CHAOS COUNTDOWN */
+const chaosCountdown=document.getElementById('chaosCountdown');
+const countdownChallenge=document.getElementById('countdownChallenge');
+const countdownStatus=document.getElementById('countdownStatus');
+const countdownStart=document.getElementById('countdownStart');
+const countdownSuccess=document.getElementById('countdownSuccess');
+const countdownChallenges=[
+  'Freeze in a dramatic Shadow pose.',
+  'Do a three second Sonic sprint in place.',
+  'Pretend to throw something with Silver psychokinesis.',
+  'React like Eggman just stole your Chaos Emerald.',
+  'Do the worst Sonic victory pose possible.',
+  'Say CHAOS CONTROL like you absolutely mean it.'
+];
+let countdownRound=0,countdownTimer=null,countdownN=5,countdownLive=false;
+function startCountdownRound(){
+  countdownStart.style.display='none';
+  countdownSuccess.style.display='none';
+  countdownN=5;countdownLive=true;
+  countdownChallenge.textContent=countdownChallenges[Math.floor(Math.random()*countdownChallenges.length)];
+  chaosCountdown.textContent='5';
+  countdownStatus.textContent='DO IT BEFORE ZERO';
+  clearInterval(countdownTimer);
+  countdownTimer=setInterval(()=>{
+    countdownN--;
+    chaosCountdown.textContent=countdownN;
+    if(countdownN<=0){
+      clearInterval(countdownTimer);countdownLive=false;
+      countdownSuccess.style.display='inline-block';
+      countdownStatus.textContent='Game Master decides if that counted.';
+    }
+  },1000);
+}
+countdownStart.addEventListener('click',startCountdownRound);
+countdownSuccess.addEventListener('click',()=>{
+  countdownRound++;
+  if(countdownRound>=3){sfx('good');show(9);return}
+  countdownStatus.textContent='ROUND '+countdownRound+' OF 3 CLEAR';
+  countdownStart.style.display='inline-block';
+  countdownStart.textContent='START ROUND '+(countdownRound+1);
+  countdownSuccess.style.display='none';
+});
+
+
+/* SECRET MISSIONS */
+const secretStep=document.getElementById('secretStep');
+const secretCard=document.getElementById('secretCard');
+const secretText=document.getElementById('secretText');
+const secretAction=document.getElementById('secretAction');
+const secretHide=document.getElementById('secretHide');
+const secretStatus=document.getElementById('secretStatus');
+const secretContinue=document.getElementById('secretContinue');
+
+const princessMissions=[
+  'At some random point today, scare the Game Master when she is not expecting it. Do not warn her afterwards that this was the mission.',
+  'At some point today, make the Game Master say the word "Tails" naturally without directly asking her to say it.',
+  'Secretly take one photo of the Game Master (funny photo) when she is completely unaware. It cannot be while she is posing.',
+  'Make the Game Master fall (öldürme ama gülüm)',
+  'At one random moment, start walking dramatically faster for no reason and make the Game Master follow you.',
+  'Get the Game Master to copy one movement you make without telling him it is part of the mission.'
+];
+
+const masterMissions=[
+  'At some random point today, scare Birthday Princess when she is not expecting it. Do not immediately explain why.',
+  'Make Birthday Princess say "what? / ne yapıyon?" three times without telling her what you are doing.',
+  'Secretly get Birthday Princess into a sensual photo where she has no idea a mission is happening.',
+  'Get Birthday Princess to hold a random harmless object for at least thirty seconds without explaining the reason.',
+  'At some point, suddenly act like you are urgently going somewhere and get Birthday Princess to follow for at least five steps.',
+  'Get Birthday Princess to unknowingly copy one movement you make.'
+];
+
+let secretPhase=0;
+let chosenPrincessMission='';
+let chosenMasterMission='';
+
+function chooseSecret(list){
+  return list[Math.floor(Math.random()*list.length)];
+}
+
+secretAction.addEventListener('click',()=>{
+  if(secretPhase===0){
+    chosenPrincessMission=chooseSecret(princessMissions);
+    secretText.textContent=chosenPrincessMission;
+    secretCard.classList.add('revealed');
+    secretAction.style.display='none';
+    secretHide.style.display='inline-block';
+    secretStep.textContent='Birthday Princess, read this alone.';
+    secretStatus.textContent='Memorize it. Do not say it out loud.';
+  }else if(secretPhase===2){
+    chosenMasterMission=chooseSecret(masterMissions);
+    secretText.textContent=chosenMasterMission;
+    secretCard.classList.add('revealed');
+    secretAction.style.display='none';
+    secretHide.style.display='inline-block';
+    secretStep.textContent='Game Master, read this alone.';
+    secretStatus.textContent='Memorize it. Birthday Princess should not see the screen.';
+  }
+});
+
+secretHide.addEventListener('click',()=>{
+  secretCard.classList.remove('revealed');
+  secretText.textContent='';
+  secretHide.style.display='none';
+
+  if(secretPhase===0){
+    secretPhase=2;
+    secretStep.textContent='Now give the phone to Game Master.';
+    secretStatus.textContent='Birthday Princess should look away.';
+    secretAction.textContent='GAME MASTER HAS THE PHONE';
+    secretAction.style.display='inline-block';
+  }else if(secretPhase===2){
+    secretPhase=3;
+    secretStep.textContent='Both secret missions are locked.';
+    secretStatus.textContent='Complete them naturally before the end of the day. Reveal them only after both have happened.';
+    secretContinue.style.display='inline-block';
+  }
+});
+
+secretContinue.addEventListener('click',()=>show(11));
+
+
+/* CHAOS SYNC HOLD */
+const syncPrincess=document.getElementById('syncPrincess');
+const syncMaster=document.getElementById('syncMaster');
+const syncBarFill=document.getElementById('syncBarFill');
+const syncHoldStatus=document.getElementById('syncHoldStatus');
+
+let syncPrincessHeld=false;
+let syncMasterHeld=false;
+let syncHoldValue=0;
+let syncHoldTimer=null;
+let syncHoldDone=false;
+
+function updateSyncHold(){
+  if(syncHoldDone)return;
+  if(syncPrincessHeld&&syncMasterHeld){
+    syncHoldValue=Math.min(3000,syncHoldValue+50);
+  }else{
+    syncHoldValue=Math.max(0,syncHoldValue-100);
+  }
+
+  syncBarFill.style.width=(syncHoldValue/3000*100)+'%';
+
+  if(syncHoldValue>=3000){
+    syncHoldDone=true;
+    clearInterval(syncHoldTimer);
+    syncHoldTimer=null;
+    syncHoldStatus.textContent='CHAOS SYNC COMPLETE';
+    sfx('super');
+    flashNow();
+    setTimeout(()=>show(12),850);
+  }
+}
+
+function ensureSyncTimer(){
+  if(syncHoldTimer||syncHoldDone)return;
+  syncHoldTimer=setInterval(updateSyncHold,50);
+}
+
+function bindSyncButton(btn,setter){
+  const down=e=>{
+    e.preventDefault();
+    setter(true);
+    btn.classList.add('active');
+    ensureSyncTimer();
+  };
+  const up=e=>{
+    e.preventDefault();
+    setter(false);
+    btn.classList.remove('active');
+  };
+  btn.addEventListener('pointerdown',down);
+  btn.addEventListener('pointerup',up);
+  btn.addEventListener('pointercancel',up);
+  btn.addEventListener('pointerleave',up);
+}
+
+bindSyncButton(syncPrincess,v=>syncPrincessHeld=v);
+bindSyncButton(syncMaster,v=>syncMasterHeld=v);
 
 
 /* ROCK PAPER SCISSORS VS EGGMAN */
@@ -242,29 +755,133 @@ let rpsPlayer=0,rpsEggman=0,rpsLocked=false;
 const rpsIcons={rock:'✊ ROCK',paper:'✋ PAPER',scissors:'✌️ SCISSORS'};
 function resetRps(){rpsPlayer=0;rpsEggman=0;rpsLocked=false;rpsPlayerEl.textContent='MINNAK 0';rpsEggmanEl.textContent='EGGMAN 0';rpsResult.textContent='CHOOSE YOUR MOVE';rpsStatus.textContent='Defeat Eggman to recover the final emerald.';rpsContinue.style.display='none';rpsButtons.forEach(b=>b.disabled=false)}
 function rpsWinner(a,b){if(a===b)return 0;if((a==='rock'&&b==='scissors')||(a==='paper'&&b==='rock')||(a==='scissors'&&b==='paper'))return 1;return -1}
-rpsButtons.forEach(btn=>btn.addEventListener('click',()=>{if(rpsLocked)return;rpsLocked=true;const player=btn.dataset.rps;const opts=['rock','paper','scissors'];const egg=opts[Math.floor(Math.random()*opts.length)];const result=rpsWinner(player,egg);rpsResult.textContent='MINNAK: '+rpsIcons[player]+'  //  EGGMAN: '+rpsIcons[egg];if(result===1){rpsPlayer++;sfx('good');rpsStatus.textContent='ROUND WON.'}else if(result===-1){rpsEggman++;sfx('bad');rpsStatus.textContent='EGGMAN TAKES THE ROUND.'}else{rpsStatus.textContent='DRAW // TIMELINE UNCHANGED.'}rpsPlayerEl.textContent='MINNAK '+rpsPlayer;rpsEggmanEl.textContent='EGGMAN '+rpsEggman;if(rpsPlayer>=3){rpsButtons.forEach(b=>b.disabled=true);rpsStatus.textContent='EGGMAN DEFEATED // FINAL CHAOS SIGNAL RELEASED';rpsContinue.style.display='inline-block';sfx('emerald');rpsLocked=false;return}if(rpsEggman>=3){rpsButtons.forEach(b=>b.disabled=true);rpsStatus.textContent='EGGMAN WON 💀 SCORE RESETTING...';setTimeout(resetRps,1100);return}setTimeout(()=>{rpsLocked=false},450)}));
-rpsContinue.addEventListener('click',()=>show(18));
+rpsButtons.forEach(btn=>btn.addEventListener('click',()=>{if(rpsLocked)return;rpsLocked=true;const player=btn.dataset.rps;const opts=['rock','paper','scissors'];const egg=opts[Math.floor(Math.random()*opts.length)];const result=rpsWinner(player,egg);rpsResult.textContent='MINNAK: '+rpsIcons[player]+'   EGGMAN: '+rpsIcons[egg];if(result===1){rpsPlayer++;sfx('good');rpsStatus.textContent='ROUND WON.'}else if(result===-1){rpsEggman++;sfx('bad');rpsStatus.textContent='EGGMAN TAKES THE ROUND.'}else{rpsStatus.textContent='DRAW TIMELINE UNCHANGED.'}rpsPlayerEl.textContent='MINNAK '+rpsPlayer;rpsEggmanEl.textContent='EGGMAN '+rpsEggman;if(rpsPlayer>=3){rpsButtons.forEach(b=>b.disabled=true);rpsStatus.textContent='EGGMAN DEFEATED FINAL CHAOS SIGNAL RELEASED';rpsContinue.style.display='inline-block';sfx('emerald');rpsLocked=false;return}if(rpsEggman>=3){rpsButtons.forEach(b=>b.disabled=true);rpsStatus.textContent='EGGMAN WON 💀 SCORE RESETTING...';setTimeout(resetRps,1100);return}setTimeout(()=>{rpsLocked=false},450)}));
+rpsContinue.addEventListener('click',()=>show(19));
 
 /* dual hold optimized to 50ms interval */
 const a=document.getElementById('holdA'),b=document.getElementById('holdB'),fill=document.getElementById('chargeFill'),chargeStatus=document.getElementById('chargeStatus');
 let heldA=false,heldB=false,charge=0,chargeTimer=null,done=false;
-function ensureChargeTimer(){if(chargeTimer)return;chargeTimer=setInterval(()=>{if(done){clearInterval(chargeTimer);chargeTimer=null;return}if(heldA&&heldB)charge=Math.min(4000,charge+50);else charge=Math.max(0,charge-75);fill.style.width=(charge/4000*100)+'%';chargeStatus.textContent=Math.floor(charge/40)+'%';if(charge>=4000){done=true;sfx('super');flashNow();chargeStatus.textContent='SUPER TRANSFORMATION';setTimeout(()=>show(21),900)}},50)}
+function ensureChargeTimer(){if(chargeTimer)return;chargeTimer=setInterval(()=>{if(done){clearInterval(chargeTimer);chargeTimer=null;return}if(heldA&&heldB)charge=Math.min(4000,charge+50);else charge=Math.max(0,charge-75);fill.style.width=(charge/4000*100)+'%';chargeStatus.textContent=Math.floor(charge/40)+'%';if(charge>=4000){done=true;sfx('super');flashNow();chargeStatus.textContent='SUPER TRANSFORMATION';setTimeout(()=>show(22),900)}},50)}
 function bindHold(btn,setter){const on=e=>{e.preventDefault();setter(true);btn.classList.add('active');ensureChargeTimer()};const off=e=>{e.preventDefault();setter(false);btn.classList.remove('active')};btn.addEventListener('pointerdown',on);btn.addEventListener('pointerup',off);btn.addEventListener('pointercancel',off);btn.addEventListener('pointerleave',off)}
 bindHold(a,v=>heldA=v);bindHold(b,v=>heldB=v);
 
 /* Solaris */
 const heroBtns=[...document.querySelectorAll('.heroBtn')],bossFill=document.getElementById('bossFill'),bossStatus=document.getElementById('bossStatus');
 const order=['silver','shadow','sonic'];let phase=0;
-heroBtns.forEach(btn=>btn.addEventListener('click',()=>{if(btn.classList.contains('done'))return;if(btn.dataset.hero===order[phase]){btn.classList.add('done');sfx('good');phase++;bossFill.style.width=((3-phase)/3*100)+'%';if(phase>=3){bossStatus.textContent='SOLARIS DEFEATED';sfx('super');flashNow();setTimeout(()=>show(23),900)}else bossStatus.textContent='PHASE '+(phase+1)+' / 3'}else{sfx('bad');bossStatus.textContent='WRONG HERO — TRY ANOTHER';setTimeout(()=>bossStatus.textContent='PHASE '+(phase+1)+' / 3',650)}}));
+heroBtns.forEach(btn=>btn.addEventListener('click',()=>{if(btn.classList.contains('done'))return;if(btn.dataset.hero===order[phase]){btn.classList.add('done');sfx('good');phase++;bossFill.style.width=((3-phase)/3*100)+'%';if(phase>=3){bossStatus.textContent='SOLARIS DEFEATED';sfx('super');flashNow();setTimeout(()=>show(24),900)}else bossStatus.textContent='PHASE '+(phase+1)+' / 3'}else{sfx('bad');bossStatus.textContent='WRONG HERO — TRY ANOTHER';setTimeout(()=>bossStatus.textContent='PHASE '+(phase+1)+' / 3',650)}}));
 
-/* Mobile-friendly catch: no requestAnimationFrame loop */
-const catchArena=document.getElementById('catchArena'),catchTarget=document.getElementById('catchTarget'),catchCountEl=document.getElementById('catchCount'),catchTimerEl=document.getElementById('catchTimer'),catchStatus=document.getElementById('catchStatus'),catchStart=document.getElementById('catchStart'),heartPop=document.getElementById('heartPop');
-let catches=0,catchRunning=false,catchDeadline=0,catchTimerId=null;
-function moveCatchTarget(){if(!catchRunning)return;const ar=catchArena.getBoundingClientRect();const size=window.innerWidth<=520?68:74,pad=14;const maxX=Math.max(pad,ar.width-size-pad),maxY=Math.max(pad,ar.height-size-pad);const x=pad+Math.random()*Math.max(1,maxX-pad),y=pad+Math.random()*Math.max(1,maxY-pad);catchTarget.style.left=(x+size/2)+'px';catchTarget.style.top=(y+size/2)+'px'}
-function stopCatchTimer(){if(catchTimerId){clearInterval(catchTimerId);catchTimerId=null}}
-function updateCatchTime(){if(!catchRunning)return;const left=Math.max(0,catchDeadline-performance.now());catchTimerEl.textContent=(left/1000).toFixed(1)+'s';if(left<=0){catchRunning=false;stopCatchTimer();catchTarget.style.display='none';catchStatus.textContent='TOO SLOW ♡ TRY AGAIN';catchStart.disabled=false;catchStart.textContent='TRY AGAIN';sfx('bad')}}
-catchStart.addEventListener('click',()=>{catches=0;catchRunning=true;catchDeadline=performance.now()+20000;catchCountEl.textContent='RINGS 0 / 7';catchStatus.textContent='CATCH THE SONIC SIGNAL!';catchStart.disabled=true;catchTarget.style.display='block';moveCatchTarget();stopCatchTimer();catchTimerId=setInterval(updateCatchTime,100);updateCatchTime()});
-catchTarget.addEventListener('click',()=>{if(!catchRunning)return;catches++;catchCountEl.textContent='RINGS '+catches+' / 7';sfx('good');const tr=catchTarget.getBoundingClientRect(),ar=catchArena.getBoundingClientRect();heartPop.style.left=(tr.left-ar.left+tr.width/2)+'px';heartPop.style.top=(tr.top-ar.top+tr.height/2)+'px';heartPop.classList.remove('pop');void heartPop.offsetWidth;heartPop.classList.add('pop');if(catches>=7){catchRunning=false;stopCatchTimer();catchTarget.style.display='none';catchStatus.textContent='CAR KEY ACCESS UNLOCKED ♡';catchTimerEl.textContent='CLEAR!';sfx('emerald');flashNow();setTimeout(()=>show(28),800)}else moveCatchTarget()});
+/* YALINCAK COAST RUN */
+const runArena=document.getElementById('runArena');
+const runner=document.getElementById('runner');
+const runLeft=document.getElementById('runLeft');
+const runRight=document.getElementById('runRight');
+const runRings=document.getElementById('runRings');
+const runHits=document.getElementById('runHits');
+const runCombo=document.getElementById('runCombo');
+const runShield=document.getElementById('runShield');
+const runStatus=document.getElementById('runStatus');
+const runStart=document.getElementById('runStart');
+
+let runLane=1,runScore=0,runDamage=0,combo=0,shield=false,runActive=false,runTick=null,spawnTick=null,objects=[];
+const laneLeft=[16.7,50,83.3];
+
+function setRunnerLane(){runner.style.left=laneLeft[runLane]+'%'}
+function moveLane(dir){
+  if(!runActive)return;
+  runLane=Math.max(0,Math.min(2,runLane+dir));
+  setRunnerLane();sfx('ui');
+}
+runLeft.addEventListener('click',()=>moveLane(-1));
+runRight.addEventListener('click',()=>moveLane(1));
+
+function clearRunObjects(){objects.forEach(o=>o.el.remove());objects=[]}
+function spawnRunObject(){
+  if(!runActive)return;
+  const lane=Math.floor(Math.random()*3);
+  const roll=Math.random();
+  let type='ring';
+  if(roll<0.32)type='hazard';
+  else if(roll>0.90)type='shield';
+
+  const el=document.createElement('div');
+  el.className='runObject '+(type==='ring'?'ringObj':type==='hazard'?'hazardObj':'shieldObj');
+  el.style.left=laneLeft[lane]+'%';
+  runArena.appendChild(el);
+  objects.push({el,lane,y:-56,type});
+}
+function updateRunHud(){
+  runRings.textContent='RINGS '+runScore+' OF 12';
+  runHits.textContent='DAMAGE '+runDamage+' OF 3';
+  runCombo.textContent='COMBO '+combo;
+  runShield.textContent=shield?'SHIELD ON':'SHIELD OFF';
+  runShield.classList.toggle('shieldOn',shield);
+}
+function loseRun(){
+  runActive=false;clearInterval(runTick);clearInterval(spawnTick);clearRunObjects();
+  runStart.disabled=false;runStart.textContent='TRY COAST RUN AGAIN';
+  runStatus.textContent='Eggman got the route. Reset and run again.';
+  sfx('bad');
+}
+function winRun(){
+  runActive=false;clearInterval(runTick);clearInterval(spawnTick);clearRunObjects();
+  runStatus.textContent='CAR KEY ENERGY COMPLETE';
+  sfx('emerald');flashNow();
+  setTimeout(()=>show(29),850);
+}
+function updateRun(){
+  if(!runActive)return;
+  const arenaH=runArena.clientHeight;
+  const playerY=arenaH-78;
+
+  for(let i=objects.length-1;i>=0;i--){
+    const o=objects[i];
+    o.y+=7.5+(runScore*.12);
+    o.el.style.top=o.y+'px';
+
+    if(o.y>playerY-18 && o.y<playerY+45 && o.lane===runLane){
+      if(o.type==='hazard'){
+        if(shield){
+          shield=false;
+          runStatus.textContent='Shield blocked Eggman.';
+          sfx('good');
+        }else{
+          runDamage++;combo=0;
+          runStatus.textContent='Hit by Eggman.';
+          sfx('bad');
+        }
+      }else if(o.type==='shield'){
+        shield=true;
+        runStatus.textContent='Chaos shield active.';
+        sfx('emerald');
+      }else{
+        runScore++;combo++;
+        runStatus.textContent=combo>=4?'Nice combo. Keep it clean.':'Ring collected.';
+        sfx('good');
+      }
+
+      o.el.remove();objects.splice(i,1);updateRunHud();
+
+      if(runDamage>=3){loseRun();return}
+      if(runScore>=12){winRun();return}
+      continue;
+    }
+
+    if(o.y>arenaH+55){
+      o.el.remove();objects.splice(i,1);
+    }
+  }
+}
+runStart.addEventListener('click',()=>{
+  runLane=1;runScore=0;runDamage=0;combo=0;shield=false;runActive=true;
+  setRunnerLane();updateRunHud();clearRunObjects();
+  runStatus.textContent='Collect rings. Dodge Eggman. Grab shields.';
+  runStart.disabled=true;
+  clearInterval(runTick);clearInterval(spawnTick);
+  runTick=setInterval(updateRun,45);
+  spawnTick=setInterval(spawnRunObject,500);
+  spawnRunObject();
+});
+
 })();
 </script>
 </body>
